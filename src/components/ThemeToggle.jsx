@@ -1,6 +1,6 @@
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { LuLeaf } from 'react-icons/lu'
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../context/useTheme'
 
 const themeOptions = [
   { value: 'dark', label: 'Dark', icon: FiMoon },

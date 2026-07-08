@@ -1,22 +1,14 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-
-const THEMES = ['dark', 'light', 'natural']
-const THEME_STORAGE_KEY = 'portfolio-theme'
-
-const ThemeContext = createContext({
-  theme: 'dark',
-  setTheme: () => {},
-  themes: THEMES,
-  isReducedMotion: false,
-})
+import { useEffect, useMemo, useState } from 'react'
+import { ThemeContext } from './ThemeContextObject'
+import { THEMES, THEME_STORAGE_KEY } from './themeConstants'
 
 function getInitialTheme() {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return THEMES[0]
 
   const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY)
   if (storedTheme && THEMES.includes(storedTheme)) return storedTheme
 
-  return 'dark'
+  return THEMES[0]
 }
 
 export function ThemeProvider({ children }) {
@@ -51,8 +43,4 @@ export function ThemeProvider({ children }) {
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-}
-
-export function useTheme() {
-  return useContext(ThemeContext)
 }
