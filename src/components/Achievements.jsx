@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 
 function Achievements() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8">
+    <section className="container section-padding">
       <Reveal>
         <SectionHeading
           eyebrow="Achievements"
@@ -14,11 +14,11 @@ function Achievements() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="glass-card rounded-3xl p-8">
-          <ul className="space-y-4 text-slate-200">
+        <div className="glass-card section-card">
+          <ul className="space-y-4 text-secondary">
             {achievements.map((item) => (
               <li key={item} className="flex gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
+                <span className="mt-2 rounded-full" style={{ width: '0.5rem', height: '0.5rem', backgroundColor: 'var(--accent-cyan)', flexShrink: 0 }} />
                 <span>{item}</span>
               </li>
             ))}

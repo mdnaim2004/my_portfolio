@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 
 function EducationTimeline() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8">
+    <section className="container section-padding">
       <Reveal>
         <SectionHeading
           eyebrow="Education"
@@ -16,11 +16,11 @@ function EducationTimeline() {
       <div className="space-y-4">
         {educationTimeline.map((item, index) => (
           <Reveal key={`${item.title}-${item.period}`} delay={index * 0.05}>
-            <div className="glass-card rounded-2xl p-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-cyan-300">{item.period}</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
-              <p className="text-slate-300">{item.institution}</p>
-              <p className="mt-3 text-slate-300">{item.details}</p>
+            <div className="glass-card p-6 rounded-2xl">
+              <p className="text-sm uppercase tracking-wider text-cyan">{item.period}</p>
+              <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
+              <p className="text-secondary">{item.institution}</p>
+              <p className="mt-3 text-secondary">{item.details}</p>
             </div>
           </Reveal>
         ))}

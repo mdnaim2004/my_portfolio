@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 
 function TechStack() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8">
+    <section className="container section-padding">
       <Reveal>
         <SectionHeading
           eyebrow="Tech Stack"
@@ -14,12 +14,12 @@ function TechStack() {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="glass-card rounded-3xl p-7">
+        <div className="glass-card section-card">
           <div className="flex flex-wrap gap-3">
             {techStack.map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                className="tech-badge"
               >
                 {item}
               </span>

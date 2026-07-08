@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 
 function Skills() {
   return (
-    <section id="skills" className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8">
+    <section id="skills" className="container section-padding">
       <Reveal>
         <SectionHeading
           eyebrow="Skills"
@@ -13,10 +13,12 @@ function Skills() {
         />
       </Reveal>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm-grid-cols-2 lg-grid-cols-4">
         {skills.map((skill, index) => (
           <Reveal key={skill} delay={index * 0.04}>
-            <div className="glass-card rounded-2xl p-5 text-sm font-medium text-slate-100">{skill}</div>
+            <div className="glass-card p-4 rounded-2xl text-sm font-medium text-center" style={{ color: 'var(--text-primary)' }}>
+              {skill}
+            </div>
           </Reveal>
         ))}
       </div>

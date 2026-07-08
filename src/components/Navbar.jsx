@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { navLinks } from '../data/portfolioData'
+import ThemeToggle from './ThemeToggle'
 import './Navbar.css'
 
 function Navbar() {
@@ -13,24 +14,28 @@ function Navbar() {
           Md Naim Babu
         </a>
 
-        <button
-          type="button"
-          className="navbar-toggle"
-          onClick={() => setOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
-        >
-          {open ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
-        </button>
+        <div className="flex items-center gap-4">
+          <ul className="navbar-links">
+            {navLinks.map((link) => (
+              <li key={link.label}>
+                <a href={link.href} className="navbar-link">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          
+          <ThemeToggle />
 
-        <ul className="navbar-links">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a href={link.href} className="navbar-link">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <button
+            type="button"
+            className="navbar-toggle"
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label="Toggle navigation menu"
+          >
+            {open ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
