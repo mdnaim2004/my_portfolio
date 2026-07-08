@@ -17,10 +17,10 @@ function EducationTimeline() {
         {educationTimeline.map((item, index) => (
           <Reveal key={`${item.title}-${item.period}`} delay={index * 0.05}>
             <div className="glass-card rounded-2xl p-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-cyan-300">{item.period}</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
-              <p className="text-slate-300">{item.institution}</p>
-              <p className="mt-3 text-slate-300">{item.details}</p>
+              <p className="theme-eyebrow text-sm uppercase tracking-[0.2em]">{item.period}</p>
+              <h3 className="theme-heading mt-2 text-xl font-semibold">{item.title}</h3>
+              <p className="theme-body">{item.institution}</p>
+              <p className="theme-body mt-3">{item.details}</p>
             </div>
           </Reveal>
         ))}

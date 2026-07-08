@@ -1,7 +1,6 @@
 import About from './components/About'
 import Achievements from './components/Achievements'
-import BackgroundEffects from './components/BackgroundEffects'
-import CinematicBackground from './components/CinematicBackground'
+import BackgroundLayer from './components/BackgroundLayer'
 import Contact from './components/Contact'
 import EducationTimeline from './components/EducationTimeline'
 import Footer from './components/Footer'
@@ -12,12 +11,12 @@ import Projects from './components/Projects'
 import Research from './components/Research'
 import Skills from './components/Skills'
 import TechStack from './components/TechStack'
+import { ThemeProvider } from './context/ThemeContext'
 
-function App() {
+function AppContent() {
   return (
-    <div className="relative min-h-screen text-slate-100 z-10">
-      <CinematicBackground />
-      <BackgroundEffects />
+    <div className="theme-transition relative z-10 min-h-screen">
+      <BackgroundLayer />
       <Navbar />
       <main>
         <Hero />
@@ -33,6 +32,14 @@ function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   )
 }
 

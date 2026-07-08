@@ -14,9 +14,9 @@ function About() {
       </Reveal>
 
       <Reveal delay={0.1} className="glass-card rounded-3xl p-8 md:p-10">
-        <h3 className="text-2xl font-semibold text-white">{personalInfo.name}</h3>
-        <p className="mt-2 text-cyan-300">{personalInfo.title}</p>
-        <p className="mt-4 text-slate-300">{personalInfo.bio}</p>
+        <h3 className="theme-heading text-2xl font-semibold">{personalInfo.name}</h3>
+        <p className="theme-accent mt-2">{personalInfo.title}</p>
+        <p className="theme-body mt-4">{personalInfo.bio}</p>
       </Reveal>
     </section>
   )

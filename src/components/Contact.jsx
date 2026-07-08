@@ -17,11 +17,8 @@ function Contact() {
       <Reveal delay={0.1}>
         <div className="glass-card rounded-3xl p-8 md:flex md:items-center md:justify-between">
           <div>
-            <p className="text-white">Reach me directly at:</p>
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="mt-2 inline-block text-lg font-medium text-cyan-300 hover:text-cyan-200"
-            >
+            <p className="theme-heading">Reach me directly at:</p>
+            <a href={`mailto:${personalInfo.email}`} className="theme-accent mt-2 inline-block text-lg font-medium hover:opacity-85">
               {personalInfo.email}
             </a>
           </div>
