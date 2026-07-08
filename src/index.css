@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 min-h-screen bg-slate-950 font-sans text-slate-100 antialiased;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(14, 116, 144, 0.18) 0, transparent 40%),
+    radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.2) 0, transparent 45%);
+}
+
+* {
+  @apply box-border;
+}
+
+.glass-card {
+  @apply border border-white/15 bg-white/[0.04] shadow-[0_12px_50px_rgba(8,15,45,0.45)] backdrop-blur-xl;
+}
+
+.project-card {
+  @apply border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-transparent backdrop-blur-xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-cyan-400/20 px-5 py-2.5 text-sm font-medium text-cyan-100 transition hover:-translate-y-0.5 hover:bg-cyan-400/30;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-sm font-medium text-slate-100 transition hover:-translate-y-0.5 hover:bg-white/10;
+}
+
+.gradient-mesh {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.14), transparent 32%),
+    radial-gradient(circle at 80% 18%, rgba(96, 165, 250, 0.15), transparent 35%),
+    radial-gradient(circle at 50% 75%, rgba(139, 92, 246, 0.18), transparent 35%);
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.35;
+  animation: floatBlob 12s ease-in-out infinite;
+}
+
+.blob-one {
+  width: 18rem;
+  height: 18rem;
+  left: -4rem;
+  top: 6rem;
+  background: rgba(34, 211, 238, 0.6);
+}
+
+.blob-two {
+  width: 24rem;
+  height: 24rem;
+  right: -6rem;
+  top: 12rem;
+  background: rgba(147, 51, 234, 0.5);
+  animation-delay: 2s;
+}
+
+.blob-three {
+  width: 20rem;
+  height: 20rem;
+  left: 35%;
+  bottom: -4rem;
+  background: rgba(59, 130, 246, 0.5);
+  animation-delay: 4s;
+}
+
+@keyframes floatBlob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -25px, 0) scale(1.05);
+  }
+}
