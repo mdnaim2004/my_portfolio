@@ -9,7 +9,7 @@ function Highlights() {
       <Reveal>
         <SectionHeading
           eyebrow="Profiles"
-          title="GitHub, Kaggle, LeetCode"
+          title="GitHub, Kaggle, LeetCode, Codeforces"
           description="A snapshot of my coding, experimentation, and public technical profile."
         />
       </Reveal>

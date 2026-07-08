@@ -21,6 +21,7 @@ export const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/mdnaim2004' },
   { label: 'Kaggle', href: 'https://www.kaggle.com/mdnaimislam165436' },
   { label: 'LeetCode', href: 'https://leetcode.com/u/mdnaim2004/' },
+  { label: 'Codeforces', href: 'https://codeforces.com/profile/naim2004' },
   { label: 'LinkedIn', href: '#' },
 ]
 
@@ -130,5 +131,11 @@ export const highlights = [
     value: 'Problem Solving',
     description: 'Algorithmic consistency and technical interview readiness.',
     href: 'https://leetcode.com/u/mdnaim2004/',
+  },
+  {
+    title: 'Codeforces',
+    value: 'Competitive Programming',
+    description: 'Contest practice, problem solving, and rating progress.',
+    href: 'https://codeforces.com/profile/naim2004',
   },
 ]
