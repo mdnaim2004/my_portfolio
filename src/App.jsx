@@ -15,7 +15,7 @@ import TechStack from './components/TechStack'
 
 function App() {
   return (
-    <div className="relative min-h-screen text-slate-100 z-10">
+    <div className="relative min-h-screen z-10">
       <CinematicBackground />
       <BackgroundEffects />
       <Navbar />
