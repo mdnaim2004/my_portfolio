@@ -1,45 +1,60 @@
 import { useEffect, useState } from 'react'
 
+function shouldUseFallbackMode() {
+  if (typeof window === 'undefined') return true
+
+  const reduceMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)')
+  if (reduceMotionMedia.matches) return true
+
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+  if (connection?.saveData) return true
+  if (connection?.effectiveType === 'slow-2g' || connection?.effectiveType === '2g') return true
+
+  if (typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 4) return true
+
+  return false
+}
+
 export default function CinematicBackground() {
-    const [reduceMotion, setReduceMotion] = useState(false)
+  const [useFallback, setUseFallback] = useState(true)
 
-    useEffect(() => {
-        if (typeof window === 'undefined') return
-        const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-        const handle = () => setReduceMotion(mq.matches)
-        handle()
-        mq.addEventListener?.('change', handle)
-        return () => mq.removeEventListener?.('change', handle)
-    }, [])
+  useEffect(() => {
+    if (typeof window === 'undefined') return
 
-    // Video will only render on medium+ screens for performance and mobile fallback
-    return (
-        // container sits fixed and behind the app content
-        <div aria-hidden="true" className="fixed inset-0 -z-20 pointer-events-none">
-            {/* Fallback for small screens / slow devices */}
-            <div className="md:hidden inset-0 fixed -z-20 w-full h-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900" />
+    const reduceMotionMedia = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+    const updateFallbackMode = () => setUseFallback(shouldUseFallbackMode())
 
-            {/* Video for md+ screens. Honors reduced motion preference by not autoplaying */}
-            <div className="hidden md:block fixed inset-0 -z-20 w-full h-full overflow-hidden">
-                {!reduceMotion && (
-                    <video
-                        className="w-full h-full object-cover opacity-40"
-                        src="/videos/nature-bg.mp4"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="metadata"
-                        poster="/videos/nature-poster.jpg"
-                    />
-                )}
+    updateFallbackMode()
+    reduceMotionMedia.addEventListener?.('change', updateFallbackMode)
+    connection?.addEventListener?.('change', updateFallbackMode)
 
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-black/60" />
+    return () => {
+      reduceMotionMedia.removeEventListener?.('change', updateFallbackMode)
+      connection?.removeEventListener?.('change', updateFallbackMode)
+    }
+  }, [])
 
-                {/* Smooth gradient overlay to add cinematic color */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/60 via-transparent to-indigo-900/30" />
-            </div>
-        </div>
-    )
+  return (
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-20 overflow-hidden">
+      <div className="absolute inset-0 bg-slate-950" />
+
+      {!useFallback && (
+        <video
+          className="hidden h-full w-full object-cover opacity-30 md:block"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+        >
+          <source src="/videos/nature-bg.mp4" type="video/mp4" />
+        </video>
+      )}
+
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-slate-950/80 via-slate-900/30 to-indigo-950/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/65" />
+    </div>
+  )
 }
