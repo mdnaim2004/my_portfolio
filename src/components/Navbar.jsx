@@ -1,30 +1,31 @@
 import { useState } from 'react'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
 import { navLinks } from '../data/portfolioData'
+import './Navbar.css'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/65 backdrop-blur-xl">
-      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <a href="#home" className="text-sm font-semibold uppercase tracking-[0.32em] text-white">
+    <header className="navbar">
+      <nav className="container section-padding py-3 navbar-inner">
+        <a href="#home" className="navbar-brand">
           Md Naim Babu
         </a>
 
         <button
           type="button"
-          className="rounded-lg border border-white/20 p-2 text-white md:hidden"
+          className="navbar-toggle"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
         >
           {open ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
         </button>
 
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="text-sm text-slate-200 transition hover:text-cyan-300">
+              <a href={link.href} className="navbar-link">
                 {link.label}
               </a>
             </li>
@@ -33,13 +34,13 @@ function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-slate-900/90 px-5 py-4 md:hidden">
-          <ul className="flex flex-col gap-4">
+        <div className="navbar-mobile-menu">
+          <ul className="navbar-mobile-links">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className="text-sm text-slate-200"
+                  className="navbar-mobile-link"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
