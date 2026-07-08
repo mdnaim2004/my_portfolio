@@ -18,7 +18,7 @@ body {
 }
 
 .glass-card {
-  @apply border border-white/15 bg-white/[0.04] shadow-[0_12px_50px_rgba(8,15,45,0.45)] backdrop-blur-xl;
+  @apply border border-white/15 bg-white/[0.04] shadow-[0_12px_50px_rgba(8, 15, 45, 0.45)] backdrop-blur-xl;
 }
 
 .project-card {
@@ -53,7 +53,7 @@ body {
   height: 18rem;
   left: -4rem;
   top: 6rem;
-  background: rgba(34, 211, 238, 0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .blob-two {
@@ -75,10 +75,12 @@ body {
 }
 
 @keyframes floatBlob {
+
   0%,
   100% {
     transform: translate3d(0, 0, 0) scale(1);
   }
+
   50% {
     transform: translate3d(0, -25px, 0) scale(1.05);
   }
