@@ -38,6 +38,7 @@ export const skills = [
 export const techStack = [
   'Python',
   'C',
+  'C++',
   'SQLite',
   'OpenSSL',
   'Pandas',
