@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 
 function About() {
   return (
-    <section id="about" className="mx-auto w-full max-w-6xl px-5 py-16 md:px-8">
+    <section id="about" className="container section-padding">
       <Reveal>
         <SectionHeading
           eyebrow="About"
@@ -13,10 +13,10 @@ function About() {
         />
       </Reveal>
 
-      <Reveal delay={0.1} className="glass-card rounded-3xl p-8 md:p-10">
+      <Reveal delay={0.1} className="glass-card section-card">
         <h3 className="text-2xl font-semibold text-white">{personalInfo.name}</h3>
-        <p className="mt-2 text-cyan-300">{personalInfo.title}</p>
-        <p className="mt-4 text-slate-300">{personalInfo.bio}</p>
+        <p className="mt-2 text-cyan">{personalInfo.title}</p>
+        <p className="mt-4 text-secondary">{personalInfo.bio}</p>
       </Reveal>
     </section>
   )

@@ -170,6 +170,17 @@ button {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.section-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-card {
+    padding: 2.5rem;
+  }
+}
+
 .project-card {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03), transparent);

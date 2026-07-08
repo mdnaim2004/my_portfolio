@@ -1,0 +1,110 @@
+.hero {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 6rem;
+  }
+}
+
+.hero-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-card {
+    padding: 3rem;
+  }
+}
+
+.hero-location {
+  display: inline-flex;
+  border-radius: 9999px;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  background-color: rgba(34, 211, 238, 0.1);
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #a5f3fc;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  max-width: 48rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-text {
+  margin-top: 1.25rem;
+  max-width: 48rem;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+.hero-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-socials {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .hero-socials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-socials {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.social-link {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-link:hover {
+  border-color: rgba(34, 211, 238, 0.5);
+  background-color: rgba(34, 211, 238, 0.1);
+  color: #cffafe;
+}
+
+.social-link-icon {
+  margin-left: 0.5rem;
+  color: var(--accent-cyan);
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-link-icon {
+  transform: translate(4px, -2px);
+}
