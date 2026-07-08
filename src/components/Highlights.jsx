@@ -21,12 +21,12 @@ function Highlights() {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className="group glass-card block rounded-3xl p-6 transition hover:-translate-y-1 hover:border-cyan-300/40"
+              className="group glass-card block rounded-3xl p-6 transition hover:-translate-y-1"
             >
-              <p className="text-sm uppercase tracking-[0.2em] text-slate-400">{item.title}</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{item.value}</h3>
-              <p className="mt-3 text-sm text-slate-300">{item.description}</p>
-              <span className="mt-5 inline-flex items-center gap-2 text-sm text-cyan-300">
+              <p className="theme-muted text-sm uppercase tracking-[0.2em]">{item.title}</p>
+              <h3 className="theme-heading mt-2 text-xl font-semibold">{item.value}</h3>
+              <p className="theme-body mt-3 text-sm">{item.description}</p>
+              <span className="theme-accent mt-5 inline-flex items-center gap-2 text-sm">
                 Visit profile <FiArrowUpRight className="transition group-hover:translate-x-1 group-hover:-translate-y-0.5" />
               </span>
             </a>

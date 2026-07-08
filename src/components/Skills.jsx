@@ -16,7 +16,7 @@ function Skills() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {skills.map((skill, index) => (
           <Reveal key={skill} delay={index * 0.04}>
-            <div className="glass-card rounded-2xl p-5 text-sm font-medium text-slate-100">{skill}</div>
+            <div className="glass-card theme-heading rounded-2xl p-5 text-sm font-medium">{skill}</div>
           </Reveal>
         ))}
       </div>

@@ -15,10 +15,10 @@ function Achievements() {
 
       <Reveal delay={0.1}>
         <div className="glass-card rounded-3xl p-8">
-          <ul className="space-y-4 text-slate-200">
+          <ul className="theme-body space-y-4">
             {achievements.map((item) => (
               <li key={item} className="flex gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-cyan-300" />
+                <span className="theme-dot mt-2 h-2 w-2 rounded-full" />
                 <span>{item}</span>
               </li>
             ))}

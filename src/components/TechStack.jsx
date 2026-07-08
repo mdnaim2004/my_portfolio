@@ -17,10 +17,7 @@ function TechStack() {
         <div className="glass-card rounded-3xl p-7">
           <div className="flex flex-wrap gap-3">
             {techStack.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-slate-200"
-              >
+              <span key={item} className="theme-pill theme-body rounded-full px-4 py-2 text-sm">
                 {item}
               </span>
             ))}
