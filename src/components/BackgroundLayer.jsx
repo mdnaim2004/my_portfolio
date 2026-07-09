@@ -21,6 +21,8 @@ function BackgroundLayer() {
   })
   const [videoError, setVideoError] = useState(false)
 
+  const currentVideo = videoOptions.find((v) => v.id === selectedVideo) || videoOptions[0]
+
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, selectedVideo)
     setVideoError(false)
@@ -34,8 +36,6 @@ function BackgroundLayer() {
       console.log('Video error:', videoError)
     }
   }, [theme, selectedVideo, currentVideo.src, videoError])
-
-  const currentVideo = videoOptions.find((v) => v.id === selectedVideo) || videoOptions[0]
 
   const handleVideoError = useCallback(() => {
     setVideoError(true)
