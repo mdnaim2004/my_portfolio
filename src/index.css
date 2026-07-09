@@ -77,9 +77,16 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] body {
   background-image:
     radial-gradient(at 0% 0%, rgba(14, 116, 144, 0.18) 0, transparent 40%),
     radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.2) 0, transparent 45%);
+}
+
+[data-theme="natural"] body {
+  background-image: none !important;
 }
 
 ul {
@@ -348,8 +355,10 @@ button {
 .-z-20 { z-index: -20; }
 
 .bg-slate-950 { background-color: #020617; }
+.bg-black\/40 { background-color: rgba(0, 0, 0, 0.4); }
 .bg-black\/60 { background-color: rgba(0, 0, 0, 0.6); }
 .bg-\[\#0f172a\] { background-color: #0f172a; }
+.backdrop-blur-\[1px\] { backdrop-filter: blur(1px); -webkit-backdrop-filter: blur(1px); }
 .backdrop-blur-\[2px\] { backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); }
 
 .bg-gradient-to-tr { background-image: linear-gradient(to top right, var(--tw-gradient-stops)); }

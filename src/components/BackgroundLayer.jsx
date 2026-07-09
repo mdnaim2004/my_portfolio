@@ -26,6 +26,15 @@ function BackgroundLayer() {
     setVideoError(false)
   }, [selectedVideo])
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log('Current theme:', theme)
+      console.log('Selected video:', selectedVideo)
+      console.log('Video source:', currentVideo.src)
+      console.log('Video error:', videoError)
+    }
+  }, [theme, selectedVideo, currentVideo.src, videoError])
+
   const currentVideo = videoOptions.find((v) => v.id === selectedVideo) || videoOptions[0]
 
   const handleVideoError = useCallback(() => {
@@ -33,46 +42,53 @@ function BackgroundLayer() {
   }, [])
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-      {/* Dark Theme Background */}
-      <div className={`theme-bg dark-bg ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute inset-0 gradient-mesh" />
-        <div className="glow-blob blob-one" />
-        <div className="glow-blob blob-two" />
-        <div className="glow-blob blob-three" />
+    <>
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Dark Theme Background */}
+        <div className={`theme-bg dark-bg ${theme === 'dark' ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 gradient-mesh" />
+          <div className="glow-blob blob-one" />
+          <div className="glow-blob blob-two" />
+          <div className="glow-blob blob-three" />
+        </div>
+
+        {/* Light Theme Background */}
+        <div className={`theme-bg light-bg ${theme === 'light' ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 light-gradient-mesh" />
+        </div>
+
+        {/* Natural Theme Background */}
+        <div className={`theme-bg natural-bg ${theme === 'natural' ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 bg-[#0f172a]" />
+
+          {!videoError && (
+            <video
+              key={selectedVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="absolute inset-0 w-full h-full object-cover natural-video"
+              onError={handleVideoError}
+            >
+              <source src={currentVideo.src} type="video/mp4" />
+            </video>
+          )}
+
+          <div className="absolute inset-0 bg-black/40" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to top, rgba(2,6,23,0.7), transparent, transparent)',
+            }}
+          />
+        </div>
       </div>
 
-      {/* Light Theme Background */}
-      <div className={`theme-bg light-bg ${theme === 'light' ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute inset-0 light-gradient-mesh" />
-      </div>
-
-      {/* Natural Theme Background */}
-      <div className={`theme-bg natural-bg ${theme === 'natural' ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute inset-0 bg-[#0f172a]" />
-
-        {!videoError && (
-          <video
-            key={selectedVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover natural-video"
-            onError={handleVideoError}
-          >
-            <source src={currentVideo.src} type="video/mp4" />
-          </video>
-        )}
-
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
-      </div>
-
-      {/* Video Selector - only visible in Natural mode */}
+      {/* Video Selector - outside pointer-events-none wrapper for proper click handling */}
       {theme === 'natural' && (
-        <div className="video-selector pointer-events-auto">
+        <div className="video-selector">
           {videoOptions.map((video) => (
             <button
               key={video.id}
@@ -84,7 +100,7 @@ function BackgroundLayer() {
           ))}
         </div>
       )}
-    </div>
+    </>
   )
 }
 

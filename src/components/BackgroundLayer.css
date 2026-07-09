@@ -61,7 +61,8 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 5;
+  z-index: 100;
+  pointer-events: auto;
 }
 
 .video-selector-btn {
