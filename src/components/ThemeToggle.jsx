@@ -5,12 +5,6 @@ import './ThemeToggle.css'
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
-  const handleToggle = () => {
-    if (theme === 'dark') setTheme('light')
-    else if (theme === 'light') setTheme('natural')
-    else setTheme('dark')
-  }
-
   return (
     <div className="theme-toggle-container">
       <div className="theme-selector">
