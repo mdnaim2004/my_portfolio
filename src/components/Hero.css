@@ -29,7 +29,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.28em;
-  color: #a5f3fc;
+  color: var(--accent-cyan);
   margin-bottom: 1.25rem;
 }
 
@@ -38,7 +38,7 @@
   font-size: 2.25rem;
   font-weight: 600;
   line-height: 1.2;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 @media (min-width: 768px) {
@@ -82,8 +82,8 @@
 
 .social-link {
   border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg);
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -96,7 +96,7 @@
 .social-link:hover {
   border-color: rgba(34, 211, 238, 0.5);
   background-color: rgba(34, 211, 238, 0.1);
-  color: #cffafe;
+  color: var(--accent-cyan);
 }
 
 .social-link-icon {

@@ -21,6 +21,10 @@
   --glass-border: rgba(255, 255, 255, 0.15);
   --glass-border-hover: rgba(255, 255, 255, 0.3);
   --glass-shadow: 0 12px 50px rgba(8, 15, 45, 0.45);
+  
+  /* Navbar */
+  --navbar-bg: rgba(2, 6, 23, 0.65);
+  --navbar-border: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="light"] {
@@ -31,10 +35,13 @@
   
   --accent-cyan: #0891b2; /* cyan-600 */
   
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-border-hover: rgba(0, 0, 0, 0.25);
-  --glass-shadow: 0 12px 50px rgba(0, 0, 0, 0.05);
+  --glass-bg: rgba(240, 248, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --glass-border-hover: rgba(0, 0, 0, 0.3);
+  --glass-shadow: 0 12px 50px rgba(0, 0, 0, 0.08);
+  
+  --navbar-bg: rgba(240, 248, 255, 0.85);
+  --navbar-border: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="natural"] {
@@ -300,17 +307,18 @@ button {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg);
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-primary);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 .btn-secondary:hover {
   transform: translateY(-2px);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--glass-bg);
+  border-color: var(--glass-border-hover);
 }
 
 .tag-pill {
@@ -321,13 +329,13 @@ button {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: #cffafe;
+  color: var(--accent-cyan);
 }
 
 .tech-badge {
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg);
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   color: var(--text-secondary);

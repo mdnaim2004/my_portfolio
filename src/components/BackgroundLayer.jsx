@@ -24,18 +24,17 @@ function BackgroundLayer() {
         {/* Fallback color */}
         <div className="absolute inset-0 bg-[#0f172a]" />
         
-        {/* Video Element */}
-        {theme === 'natural' && (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover natural-video"
-          >
-            <source src="/videos/nature.mp4" type="video/mp4" />
-          </video>
-        )}
+        {/* Video Element - always in DOM but parent opacity controls fade. preload=none saves bandwidth in dark/light mode */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover natural-video"
+        >
+          <source src="/videos/nature.mp4" type="video/mp4" />
+        </video>
         
         {/* Overlays for text readability */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
