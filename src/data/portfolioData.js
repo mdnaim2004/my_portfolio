@@ -1,12 +1,12 @@
 export const personalInfo = {
   name: 'Md Naim Babu',
-  title: 'CSE Undergraduate • AI/ML Learner • Research Enthusiast',
+  title: 'CSE Undergraduate exploring Machine Learning, Data Science, and Research.',
   location: 'Bangladesh',
   email: 'naim.cse2004@gmail.com',
-  bio: 'I am a Computer Science and Engineering undergraduate focused on AI, Machine Learning, Data Science, and research-driven problem solving. I enjoy turning hard questions into practical systems that can create measurable impact.',
-  heroHeadline: 'Building intelligent systems for real-world impact.',
+  bio: 'I am a CSE undergraduate from Bangladesh with a deep curiosity for machine learning, data science, and research. Right now, most of my energy goes into my thesis — building a stress detection system using keystroke dynamics. I enjoy working on problems that sit at the intersection of human behavior and practical AI. I do not have everything figured out, but I show up, build things, and keep learning.',
+  heroHeadline: 'CSE Undergraduate exploring Machine Learning, Data Science, and Research.',
   heroSubtext:
-    'I blend machine learning, deep learning, and analytical thinking to solve meaningful problems in healthcare, student life, and secure software systems.',
+    'I build practical projects around machine learning, data analysis, and real-world problem solving. Currently working on stress detection using keystroke dynamics.',
 }
 
 export const navLinks = [
