@@ -1,12 +1,12 @@
 export const personalInfo = {
   name: 'Md Naim Babu',
-  title: 'CSE Undergraduate • AI/ML Learner • Research Enthusiast',
+  title: 'CSE Undergraduate • Machine Learning & Data Science',
   location: 'Bangladesh',
   email: 'naim.cse2004@gmail.com',
-  bio: 'I am a Computer Science and Engineering undergraduate focused on AI, Machine Learning, Data Science, and research-driven problem solving. I enjoy turning hard questions into practical systems that can create measurable impact.',
-  heroHeadline: 'Building intelligent systems for real-world impact.',
+  bio: 'I am a Computer Science and Engineering undergraduate from Bangladesh. My focus is on machine learning, data science, and applying structured thinking to solve real-world problems. Currently, I am working on my undergraduate thesis, which focuses on detecting stress through keystroke dynamics. I love diving into datasets, finding patterns, and building simple yet meaningful projects to address practical challenges. As a student and developer, my goal is to keep learning, contribute to research, and grow as a machine learning engineer.',
+  heroHeadline: 'CSE Undergraduate exploring Machine Learning, Data Science, and Research.',
   heroSubtext:
-    'I blend machine learning, deep learning, and analytical thinking to solve meaningful problems in healthcare, student life, and secure software systems.',
+    'I build small but meaningful projects around machine learning, data analysis, and real-world problem solving. Currently, I am working on stress detection using keystroke dynamics.',
 }
 
 export const navLinks = [
@@ -26,13 +26,12 @@ export const socialLinks = [
 
 export const skills = [
   'Machine Learning',
-  'Deep Learning',
   'Data Science',
-  'Research Methodology',
+  'Deep Learning',
   'Feature Engineering',
   'Competitive Programming',
+  'Data Analysis',
   'Problem Solving',
-  'Model Evaluation',
 ]
 
 export const techStack = [
@@ -77,7 +76,7 @@ export const projects = [
     title: 'AI in Student Life EDA',
     tags: ['Data Analysis', 'Pandas', 'Visualization'],
     description:
-      'Performed exploratory analysis on student life and AI adoption trends using Pandas and visual storytelling through a Kaggle notebook.',
+      'Performed exploratory analysis on student life and adoption trends using Pandas and visual storytelling through a Kaggle notebook.',
     highlights: ['Kaggle notebook', 'Pattern discovery', 'Insight-driven visualization'],
   },
   {
@@ -90,16 +89,16 @@ export const projects = [
 ]
 
 export const researchInterests = [
-  'Applied Machine Learning for social and healthcare impact',
-  'Human-centered AI and behavioral signal modeling',
-  'Medical imaging and trustworthy deep learning',
-  'Data-centric AI workflows and feature engineering',
+  'Applying machine learning to healthcare and social challenges',
+  'Human-centered computing and behavioral signal modeling',
+  'Medical imaging analysis and classification',
+  'Data preprocessing, feature engineering, and analytics',
 ]
 
 export const achievements = [
-  'Kaggle Notebook Expert with consistent public notebook contributions',
-  'Built research-oriented ML projects focused on healthcare and human behavior',
-  'Strong problem-solving background through competitive programming practice',
+  'Kaggle Notebook Expert with regular contributions to public datasets and notebooks',
+  'Developed hands-on projects exploring human behavior modeling and medical imaging',
+  'Active in competitive programming, sharpening my core problem-solving and algorithmic skills',
 ]
 
 export const educationTimeline = [
@@ -108,7 +107,7 @@ export const educationTimeline = [
     title: 'B.Sc. in Computer Science and Engineering',
     institution: 'Bangladesh',
     details:
-      'Focused on AI, Machine Learning, Data Science, software engineering foundations, and research problem formulation.',
+      'Covering fundamental computer science subjects, algorithms, databases, and pursuing machine learning through independent study and research projects.',
   },
 ]
 
@@ -116,19 +115,19 @@ export const highlights = [
   {
     title: 'GitHub',
     value: 'Project Repositories',
-    description: 'Code, experiments, and implementation-focused learning journey.',
+    description: 'Exploring algorithms and building practical machine learning models.',
     href: 'https://github.com/mdnaim2004',
   },
   {
     title: 'Kaggle',
     value: 'Notebook Expert',
-    description: 'Data analysis notebooks, ML workflows, and practical insights.',
+    description: 'Analyzing datasets and sharing notebooks on data science workflows.',
     href: 'https://www.kaggle.com/mdnaimislam165436',
   },
   {
     title: 'LeetCode',
     value: 'Problem Solving',
-    description: 'Algorithmic consistency and technical interview readiness.',
+    description: 'Solving algorithmic problems to strengthen logical thinking.',
     href: 'https://leetcode.com/u/mdnaim2004/',
   },
 ]

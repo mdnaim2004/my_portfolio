@@ -11,38 +11,48 @@ function Hero() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
         className="glass-card rounded-3xl p-8 md:p-12"
       >
-        <p className="theme-eyebrow theme-chip mb-5 inline-flex rounded-full px-4 py-1 text-xs uppercase tracking-[0.28em]">
-          {personalInfo.location}
-        </p>
-        <h1 className="theme-heading max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
-          {personalInfo.heroHeadline}
-        </h1>
-        <p className="theme-body mt-5 max-w-3xl text-lg">{personalInfo.heroSubtext}</p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#projects" className="btn-primary">
-            View Projects <FiArrowUpRight />
-          </a>
-          <a href={`mailto:${personalInfo.email}`} className="btn-secondary">
-            Contact Me <FiMail />
-          </a>
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <span className="theme-accent text-sm font-semibold tracking-wide uppercase">
+            Hi, I'm {personalInfo.name}
+          </span>
+          <span className="theme-muted text-xs opacity-50">•</span>
+          <p className="theme-eyebrow theme-chip inline-flex rounded-full px-3 py-0.5 text-[10px] uppercase tracking-[0.2em] font-medium">
+            {personalInfo.location}
+          </p>
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {socialLinks.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="theme-link-card group rounded-2xl px-4 py-3 text-sm transition"
-            >
-              <span className="font-medium">{item.label}</span>
-              <span className="theme-accent ml-2 transition group-hover:translate-x-1 group-hover:-translate-y-0.5">
-                ↗
-              </span>
+        <h1 className="theme-heading max-w-4xl text-4xl font-bold leading-[1.15] md:text-5xl lg:text-6xl tracking-tight">
+          {personalInfo.heroHeadline}
+        </h1>
+
+        <p className="theme-body mt-6 max-w-2xl text-base md:text-lg leading-relaxed opacity-90">
+          {personalInfo.heroSubtext}
+        </p>
+
+        <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center">
+          <div className="flex flex-wrap gap-4">
+            <a href="#projects" className="btn-primary">
+              View Projects <FiArrowUpRight />
             </a>
-          ))}
+            <a href={`mailto:${personalInfo.email}`} className="btn-secondary">
+              Contact Me <FiMail />
+            </a>
+          </div>
+          <div className="hidden sm:block h-6 w-[1px] bg-slate-800 dark:bg-slate-700 opacity-20"></div>
+          <div className="flex flex-wrap items-center gap-5">
+            {socialLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="theme-nav-link flex items-center gap-1 text-sm font-medium transition"
+              >
+                {item.label}
+                <span className="text-[10px] opacity-60">↗</span>
+              </a>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>
